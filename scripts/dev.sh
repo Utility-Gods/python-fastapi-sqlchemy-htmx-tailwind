@@ -11,11 +11,14 @@ cleanup() {
 # Set up trap to catch exit signals
 trap cleanup EXIT SIGINT SIGTERM
 
-# Start Tailwind in the background with its own process group
-./scripts/watch-css.sh &
 
 # Set Python path
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 
-# Start uvicorn
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 
+# Start uvicorn with additional watch directories
+uvicorn app.main:app \
+    --reload \
+    --reload-dir app/templates \
+    --reload-dir app/static \
+    --host 0.0.0.0 \
+    --port 8000 

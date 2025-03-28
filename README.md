@@ -252,6 +252,10 @@ uvicorn app.main:app --reload
 
 # Method 3: Using development script
 ./scripts/dev.sh
+
+## also start the tailwind watcher
+./scripts/watch-css.sh
+
 ```
 
 ### Access the API
