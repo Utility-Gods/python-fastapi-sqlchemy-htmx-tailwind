@@ -227,3 +227,43 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 4. **Type Hints**: Use type hints throughout the codebase
 5. **Documentation**: Document API endpoints using FastAPI's built-in swagger support
 6. **Testing**: Write tests for API endpoints and services
+
+## Development
+
+### Setup Environment
+```bash
+# Create and activate virtual environment
+uv venv --python=python3.11
+source .venv/bin/activate  # On Unix/macOS
+# or
+.\.venv\Scripts\activate  # On Windows
+
+# Install dependencies
+uv pip install -e .
+```
+
+### Run Development Server
+```bash
+# Method 1: Using Python
+python app/main.py
+
+# Method 2: Using uvicorn directly
+uvicorn app.main:app --reload
+
+# Method 3: Using development script
+./scripts/dev.sh
+```
+
+### Access the API
+- API Documentation: http://localhost:8000/docs
+- Alternative Documentation: http://localhost:8000/redoc
+- Health Check: http://localhost:8000/api/v1/health
+
+## Environment Variables
+Copy `.env.example` to `.env` and update the values:
+```bash
+cp .env.example .env
+```
+
+## Database
+See [DATABASE.md](DATABASE.md) for database setup and management.
