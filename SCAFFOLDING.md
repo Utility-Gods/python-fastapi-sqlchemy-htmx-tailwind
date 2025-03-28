@@ -28,6 +28,13 @@ This document explains the capabilities and structure of the ContentUp FastAPI s
 - **Docker Support**: Production-ready Docker setup
 - **Nginx Integration**: Reverse proxy with SSL support
 
+### Template Features
+- Jinja2 templating engine
+- HTMX for dynamic updates
+- Alpine.js for client-side interactions
+- Partial template support
+- HTMX progress indicators
+
 ## Project Structure
 
 ```

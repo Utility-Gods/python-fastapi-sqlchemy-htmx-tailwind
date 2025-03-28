@@ -267,3 +267,23 @@ cp .env.example .env
 
 ## Database
 See [DATABASE.md](DATABASE.md) for database setup and management.
+
+## Frontend Setup
+
+### Install Tailwind CSS
+```bash
+# Download and install Tailwind CLI
+./scripts/setup-tailwind.sh
+
+# Build CSS (one-time)
+./bin/tailwindcss -i ./app/static/css/input.css -o ./app/static/css/output.css
+
+# Or watch for changes during development
+./scripts/watch-css.sh
+```
+
+### Development
+```bash
+# Start both API and Tailwind watcher
+./scripts/dev.sh
+```

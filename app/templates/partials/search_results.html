@@ -1,0 +1,13 @@
+{% for user in users %}
+<div class="bg-white p-4 rounded-lg shadow"
+     hx-get="/api/v1/users/{{ user.id }}"
+     hx-trigger="click"
+     hx-target="#user-detail">
+    <h3 class="text-lg font-semibold">{{ user.name }}</h3>
+    <p class="text-gray-600">{{ user.email }}</p>
+</div>
+{% else %}
+<div class="text-gray-500 text-center py-8">
+    No results found
+</div>
+{% endfor %} 

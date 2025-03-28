@@ -26,6 +26,11 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Set up the path
 ENV PATH="/app/.venv/bin:$PATH"
 
+# Build CSS
+COPY scripts/setup-tailwind.sh .
+RUN ./scripts/setup-tailwind.sh
+RUN ./bin/tailwindcss -i ./app/static/css/input.css -o ./app/static/css/output.css --minify
+
 # Expose port 8000
 EXPOSE 8000
 

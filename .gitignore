@@ -177,3 +177,7 @@ cython_debug/
 .env
 .env.*
 !.env.example
+
+# Tailwind
+bin/
+app/static/css/output.css
